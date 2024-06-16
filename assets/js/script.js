@@ -6,11 +6,18 @@ const addEmployeesBtn = document.querySelector('#add-employees-btn');
 const employeesArray = []
 const collectEmployees = function () {
   // TODO: Get user input to create and return an array of employee objects
+  // Add roadblock if a Name fields are blank or if Salary amount is blank/not a number
   let firstName = window.prompt("Enter First Name:");
+  while (firstName == "") {
+    firstName = window.prompt("First Name Cannot Be Blank:")
+  };
   let lastName = window.prompt("Enter Last Name:");
+  while (lastName == "") {
+    lastName = window.prompt("Last Name Cannot Be Blank:");
+  };
+
   let salary = window.prompt("Enter Salary:");
-  // Add roadblock if a number is not entered in the Salary field, which will throw off the average calculation
-  while (isNaN(salary)) {
+  while (isNaN(salary) || salary <= 0) {
     salary = window.prompt("Please Enter Numerical Salary Amount:")
   };
   let addEmployee = window.confirm("Would you like to add another employee?")
