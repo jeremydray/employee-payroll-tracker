@@ -6,7 +6,7 @@ const addEmployeesBtn = document.querySelector('#add-employees-btn');
 const employeesArray = []
 const collectEmployees = function () {
   // TODO: Get user input to create and return an array of employee objects
-  // Add roadblock if a Name fields are blank or if Salary amount is blank/not a number
+  // Add roadblock if a Name field is blank or if Salary amount is blank/not a number
   let firstName = window.prompt("Enter First Name:");
   while (firstName == "") {
     firstName = window.prompt("First Name Cannot Be Blank:")
@@ -39,6 +39,7 @@ const collectEmployees = function () {
 // Display the average salary
 const displayAverageSalary = function (employeesArray) {
   // TODO: Calculate and display the average salary
+  // For loop used in order to total all items in the array, recalculating each time a new employee is added
   let averageSalary = 0;
   for (let i = 0; i < employeesArray.length; i++) {
     averageSalary += Math.round(employeesArray[i].salary / (employeesArray.length));
@@ -50,6 +51,7 @@ const displayAverageSalary = function (employeesArray) {
 const getRandomEmployee = function (employeesArray) {
   // TODO: Select and display a random employee
   let randomizedEmployee = [Math.floor(Math.random() * employeesArray.length)];
+  // Two variables used in order to combine same first and last name from the Array
   winnerFirstName = employeesArray[randomizedEmployee].firstName;
   winnerLastName = employeesArray[randomizedEmployee].lastName;
   console.log(`Congratulations to ${winnerFirstName} ${winnerLastName}, our random drawing winner!`);
