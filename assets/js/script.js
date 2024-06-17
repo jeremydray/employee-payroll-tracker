@@ -8,11 +8,11 @@ const collectEmployees = function () {
   // TODO: Get user input to create and return an array of employee objects
   // Add roadblock if a Name field is blank or if Salary amount is blank/not a number
   let firstName = window.prompt("Enter First Name:");
-  while (firstName == "") {
+  while (firstName == "" || firstName == null) {
     firstName = window.prompt("First Name Cannot Be Blank:")
   };
   let lastName = window.prompt("Enter Last Name:");
-  while (lastName == "") {
+  while (lastName == "" || lastName == null) {
     lastName = window.prompt("Last Name Cannot Be Blank:");
   };
 
@@ -42,7 +42,7 @@ const displayAverageSalary = function (employeesArray) {
   // For loop used in order to total all items in the array, recalculating each time a new employee is added
   let averageSalary = 0;
   for (let i = 0; i < employeesArray.length; i++) {
-    averageSalary += Math.round(employeesArray[i].salary / (employeesArray.length));
+    averageSalary += (employeesArray[i].salary / (employeesArray.length));
   }
   console.log(`The average employee salary between our ${employeesArray.length} employee(s) is $${averageSalary.toFixed(2)}.`);
 }
