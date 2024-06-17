@@ -43,7 +43,7 @@ const displayAverageSalary = function (employeesArray) {
   for (let i = 0; i < employeesArray.length; i++) {
     averageSalary += Math.round(employeesArray[i].salary / (employeesArray.length));
   }
-  console.log(`The average employee salary between our ${employeesArray.length} employee(s) is $${averageSalary}.00`);
+  console.log(`The average employee salary between our ${employeesArray.length} employee(s) is $${averageSalary.toFixed(2)}.`);
 }
 
 // Select a random employee
